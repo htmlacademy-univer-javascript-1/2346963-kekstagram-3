@@ -23,3 +23,5 @@ function generateMassWithObjects(count) {
     massWithUsersPhoto[i] = user;
   }
 }
+
+generateMassWithObjects(25);
