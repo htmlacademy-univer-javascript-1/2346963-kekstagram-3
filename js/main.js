@@ -4,14 +4,6 @@ const checkStrLength = (str, maxLenght) => str.length <= maxLenght;
 
 let massWithUsersPhoto = [];
 
-/*function UsersPhotos(id, description, likes, comments) {
-  this.id = id;
-  this.url = `photos/${id}.jpg`;
-  this.description = description;
-  this.likes = likes;
-  this.comments = comments;
-}*/
-
 class UsersPhotos{
   constructor(id, description, likes, comments){
     this.id = id;
