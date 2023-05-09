@@ -12,7 +12,7 @@ class UsersPhotos {
   }
 }
 
-export function generateMassWithObjects(size) {
+export function generateMassWithUsersPhotos(size) {
   for (let i = 0; i < size; i++) {
     const user = new UsersPhotos(
       i + 1,

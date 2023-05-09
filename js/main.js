@@ -1,3 +1,4 @@
-import {generateMassWithObjects, massWithUsersPhoto} from './data.js';
+import {generateMassWithUsersPhotos, massWithUsersPhoto} from './data.js';
+import {renderUsersPhotos} from './drawPhoto.js';
 
-generateMassWithObjects(25);
+renderUsersPhotos();
