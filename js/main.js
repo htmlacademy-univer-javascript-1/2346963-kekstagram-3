@@ -1,5 +1,5 @@
-import {generateMassWithUsersPhotos, massWithUsersPhoto} from './data.js';
 import {renderUsersPhotos} from './drawPhoto.js';
+import './form.js';
+import './validation.js';
 
 renderUsersPhotos();
-//Задание 7 часть 2
