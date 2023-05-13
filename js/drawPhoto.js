@@ -7,6 +7,8 @@ export function renderUsersPhotos(){
   const pictureTemplate = document.querySelector('#picture').content.querySelector('a');
 
   photos.forEach((photo) => {
+    // eslint-disable-next-line no-console
+    console.log(photo);
     const pictureElement = pictureTemplate.cloneNode(true);
     pictureElement.querySelector('img').src = photo.url;
     pictureElement.querySelector('.picture__comments').textContent = photo.comments;
@@ -15,4 +17,3 @@ export function renderUsersPhotos(){
   });
   listElement.appendChild(fragment);
 }
-

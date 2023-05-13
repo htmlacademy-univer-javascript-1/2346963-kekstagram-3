@@ -22,4 +22,5 @@ export function generateMassWithUsersPhotos(size) {
     );
     massWithUsersPhoto[i] = user;
   }
+  return massWithUsersPhoto;
 }
