@@ -8,10 +8,10 @@ const pristine = new Pristine(form, {
 });
 
 function checkCommentLength(text){
-  return(text.length > 19 && text.length<141);
+  return(text.length > 5 && text.length<120);
 }
 
-pristine.addValidator(comment, checkCommentLength(comment),'Comment length should not be more than 355 symbols and less than 10 symbols');
+pristine.addValidator(comment, checkCommentLength,'Comment length should not be more than 120 symbols and less than 5 symbols');
 
 form.addEventListener('submit', (evt) => {
   const isValid = pristine.validate();
