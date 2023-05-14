@@ -1,12 +1,17 @@
-const imgUploadInput = document.querySelector('#upload-file');
+import {resetScale} from './scale.js';
+import {resetEffects} from './effectsForPhoto.js';
+
+const imgUpload = document.querySelector('#upload-file');
 const imgUploadOverlay = document.querySelector('.img-upload__overlay');
 const body = document.querySelector('body');
 const cancelButton = imgUploadOverlay.querySelector('#upload-cancel');
+const tag = document.querySelector('.text__hashtags');
+const description = document.querySelector('.text__description');
 
 const onPopupEscKeydown = (evt) => {
   if (evt.key === 'Escape') {
     evt.preventDefault();
-    closeOverlay();
+    closeOverlay(false);
   }
 };
 
@@ -16,16 +21,23 @@ function openOverlay () {
   document.addEventListener('keydown', onPopupEscKeydown);
 }
 
-function closeOverlay () {
+export function closeOverlay (saveData) {
   imgUploadOverlay.classList.add('hidden');
   body.classList.remove('modal-open');
   document.removeEventListener('keydown', onPopupEscKeydown);
+  imgUpload.value = '';
+  if (!saveData) {
+    resetScale();
+    resetEffects();
+    tag.value = '';
+    description.value = '';
+  }
 }
 
 cancelButton.addEventListener('click', () => {
-  closeOverlay();
+  closeOverlay(false);
 });
 
-imgUploadInput.addEventListener('change', () => {
+imgUpload.addEventListener('change', () => {
   openOverlay();
 });

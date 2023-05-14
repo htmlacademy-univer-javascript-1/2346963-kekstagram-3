@@ -1,26 +1,48 @@
-import {randomCount} from './util.js';
+const chrome = {
+  name: 'chrome',
+  filter: 'grayscale',
+  min: 0,
+  max: 1,
+  step: 0.1,
+  start: 1,
+};
 
-export const massWithUsersPhoto = [];
+const sepia = {
+  name: 'sepia',
+  filter: 'sepia',
+  min: 0,
+  max: 1,
+  step: 0.1,
+  start: 1,
+};
 
-class UsersPhotos {
-  constructor(id, description, likes, comments) {
-    this.id = id;
-    this.url = `photos/${id}.jpg`;
-    this.description = description;
-    this.likes = likes;
-    this.comments = comments;
-  }
-}
+const marvin = {
+  name: 'marvin',
+  filter: 'invert',
+  min: 0,
+  max: 100,
+  step: 1,
+  start: 100,
+  symbol: '%',
+};
 
-export function generateMassWithUsersPhotos(size) {
-  for (let i = 0; i < size; i++) {
-    const user = new UsersPhotos(
-      i + 1,
-      'some comment',
-      randomCount(15, 200),
-      randomCount(0, 200)
-    );
-    massWithUsersPhoto[i] = user;
-  }
-  return massWithUsersPhoto;
-}
+const phobos = {
+  name: 'phobos',
+  filter: 'blur',
+  min: 0,
+  max: 3,
+  step: 0.1,
+  start: 3,
+  symbol: 'px',
+};
+
+const heat = {
+  name: 'heat',
+  filter: 'brightness',
+  min: 1,
+  max: 3,
+  step: 0.1,
+  start: 3,
+};
+
+export const settings = [chrome, sepia, marvin, phobos, heat];
