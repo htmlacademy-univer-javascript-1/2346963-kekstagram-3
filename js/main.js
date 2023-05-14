@@ -1,6 +1,6 @@
-import {renderUsersPhotos} from './drawPhoto.js';
-import './form.js';
 import './validation.js';
-import './effectsForPhoto.js';
+import { getData } from './load.js';
+import {renderUsersPhotos} from './drawPhoto.js';
+import { showAlert } from './util.js';
 
-renderUsersPhotos();
+getData(renderUsersPhotos, showAlert);

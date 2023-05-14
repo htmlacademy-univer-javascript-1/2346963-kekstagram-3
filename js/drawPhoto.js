@@ -1,14 +1,9 @@
-import {generateMassWithUsersPhotos} from './data.js';
-
-export function renderUsersPhotos(){
-  const photos = generateMassWithUsersPhotos(25);
+export function renderUsersPhotos(photos){
   const fragment = document.createDocumentFragment();
   const listElement = document.querySelector('.pictures');
   const pictureTemplate = document.querySelector('#picture').content.querySelector('a');
 
   photos.forEach((photo) => {
-    // eslint-disable-next-line no-console
-    console.log(photo);
     const pictureElement = pictureTemplate.cloneNode(true);
     pictureElement.querySelector('img').src = photo.url;
     pictureElement.querySelector('.picture__comments').textContent = photo.comments;
